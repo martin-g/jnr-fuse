@@ -69,11 +69,16 @@ public abstract class AbstractFuseFS implements FuseFS {
             case LINUX:
             default: // Assume linux since we have no further OS evidence
                 try {
+                    System.err.println("-------- Going to load 'libfuse.so'----");
                     // Try loading library by going through the library mapping process, see j.l.System.mapLibraryName
                     libFuse = LibraryLoader.create(LibFuse.class).failImmediately().load("fuse");
+                    System.err.println("-------- Loaded 'libfuse.so'----");
                 } catch (Throwable e) {
+                    System.err.println("-------- Failed loading 'libfuse.so'----");
+                    e.printStackTrace();
                     // Try loading the dynamic library directly which will end up calling dlopen directly, see
                     // com.kenai.jffi.Foreign.dlopen
+                    System.err.println("-------- Going to load 'libfuse.so.2'----");
                     libFuse = LibraryLoader.create(LibFuse.class).failImmediately().load("libfuse.so.2");
                 }
         }
