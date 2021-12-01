@@ -173,6 +173,8 @@ public class FileStat extends Struct {
             st_flags = null;
             st_gen = null;
         }
+        System.err.println("---------CREATE FileStat---------");
+        System.err.println(this);
     }
 
     public final dev_t st_dev;      /* Device.  */
