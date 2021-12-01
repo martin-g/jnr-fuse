@@ -300,7 +300,9 @@ public abstract class AbstractFuseFS implements FuseFS {
     }
 
     private boolean isImplemented(String funcName) {
-        return !notImplementedMethods.contains(funcName);
+        final boolean isImplemented = !notImplementedMethods.contains(funcName);
+        System.err.println("---- > " + funcName + ": " + (isImplemented ? "implemented" : "not implemented"));
+        return isImplemented;
     }
 
     private int execMount(String[] arg) {

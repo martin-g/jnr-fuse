@@ -206,4 +206,31 @@ public class FileStat extends Struct {
         stat.useMemory(memory);
         return stat;
     }
+
+    @Override
+    public java.lang.String toString() {
+        return "FileStat{" +
+            "st_dev=" + st_dev +
+            ", pad1=" + pad1 +
+            ", st_ino=" + st_ino +
+            ", st_nlink=" + st_nlink +
+            ", st_mode=" + st_mode +
+            ", st_uid=" + st_uid +
+            ", st_gid=" + st_gid +
+            ", st_rdev=" + st_rdev +
+            ", pad2=" + pad2 +
+            ", st_size=" + st_size +
+            ", st_blksize=" + st_blksize +
+            ", st_blocks=" + st_blocks +
+            ", st_atim=" + st_atim +
+            ", st_mtim=" + st_mtim +
+            ", st_ctim=" + st_ctim +
+            ", st_birthtime=" + st_birthtime +
+            ", __unused4=" + __unused4 +
+            ", __unused5=" + __unused5 +
+            ", __unused6=" + __unused6 +
+            ", st_flags=" + st_flags +
+            ", st_gen=" + st_gen +
+            '}';
+    }
 }
